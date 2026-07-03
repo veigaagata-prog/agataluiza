@@ -1,0 +1,139 @@
+/* Configurações de Cores e Acessibilidade */
+:root {
+    --verde-oliva: #556b2f;
+    --verde-claro: #f0fdf4;
+    --texto-escuro: #1e293b;
+    --texto-claro: #ffffff;
+}
+
+.alto-contraste {
+    --verde-oliva: #000000;
+    --verde-claro: #ffffff;
+    --texto-escuro: #ffffff;
+    --texto-claro: #ffff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
+}
+
+body {
+    color: var(--texto-escuro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Barra de Acessibilidade */
+.barra-acessibilidade {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    z-index: 100;
+}
+
+.btn-acessibilidade {
+    background-color: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Metades da Tela */
+.metade-superior {
+    background-color: var(--verde-oliva);
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.metade-superior h1 { color: var(--texto-claro); font-size: 2.8rem; margin-bottom: 10px; }
+.metade-superior p { color: var(--texto-claro); opacity: 0.9; font-size: 1.1rem; }
+
+.btn-registro {
+    background-color: #ffffff;
+    color: var(--verde-oliva);
+    border: 2px solid #ffffff;
+    padding: 18px 36px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-top: 25px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-registro:hover {
+    transform: scale(1.05);
+    background-color: transparent;
+    color: var(--texto-claro);
+}
+
+.metade-inferior {
+    background-color: var(--verde-claro);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.metade-inferior h2 { font-size: 1.8rem; margin-bottom: 5px; }
+.sub-jogo { margin-bottom: 20px; opacity: 0.8; }
+
+/* Container do Joguinho */
+.container-jogo {
+    width: 100%;
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.alto-contraste .container-jogo { background-color: #000000; border: 2px solid #ffffff; }
+.opcoes-jogo { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+
+.btn-opcao {
+    background-color: var(--verde-oliva);
+    color: var(--texto-claro);
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* --- ESTILO DA JANELA FLUTUANTE (MODAL DO FORMULÁRIO) --- */
+.modal-fundo {
+    display: none; /* Começa escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    backdrop-filter: blur(4px); /* Desfoca o fundo */
+    z-index: 200;
+    justify-content: center;
+    align-items: center;
+}

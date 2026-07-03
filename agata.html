@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroBolso - Inicial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="barra-acessibilidade">
+        <button class="btn-acessibilidade" onclick="alternarContraste()">Contraste</button>
+        <button class="btn-acessibilidade" onclick="alterarFonte(2)">A+</button>
+        <button class="btn-acessibilidade" onclick="alterarFonte(-2)">A-</button>
+    </div>
+
+    <div class="metade-superior">
+        <h1>🌱 AgroBolso</h1>
+        <p>A tecnologia que ajuda o pequeno produtor a colher lucros.</p>
+        <button class="btn-registro" onclick="abrirFormulario()">Fazer Registro</button>
+    </div>
+
+    <div class="metade-inferior">
+        <h2>🎮 Desafio do Produtor Sustentável</h2>
+        <p class="sub-jogo">Tome as decisões certas para manter sua fazenda no azul!</p>
+        
+        <div class="container-jogo">
+            <p id="caixa-cenario">Carregando desafio...</p>
+            <div class="opcoes-jogo" id="caixa-opcoes"></div>
+            <div class="resultado-jogo" id="jogo-status">Saldo da Fazenda: R$ 1.000,00</div>
+        </div>
+    </div>
+
+    <div class="modal-fundo" id="modalFormulario">
+        <div class="modal-conteudo">
+            <span class="botao-fechar" onclick="fecharFormulario()">&times;</span>
+            <h2>📝 Registrar Movimentação</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem;">Adicione uma receita ou despesa da fazenda</p>
+            
+            <form id="meuFormulario" onsubmit="salvarRegistro(event)">
+                <div class="campo-grupo">
+                    <label for="descricao">Descrição da Atividade:</label>
+                    <input type="text" id="descricao" placeholder="Ex: Venda de 5 sacas de milho" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="valor">Valor (R$):</label>
+                    <input type="number" id="valor" step="0.01" placeholder="0,00" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tipo">Tipo de Transação:</label>
+                    <select id="tipo" required>
+                        <option value="ganho">Entrada / Ganho (+)</option>
+                        <option value="gasto">Saída / Gasto (-)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-enviar">Gravar no Sistema</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
